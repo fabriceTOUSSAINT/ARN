@@ -1,0 +1,32 @@
+type User {
+  id: String!
+  created: String
+  email: String
+  username: String
+}
+
+type Query {
+  helloWorld: String!
+}
+
+type JWTokenResponse {
+  refresh: String!
+  access: String!
+}
+
+input CreateUserInput {
+  password: String!
+  email: String!
+  username: String!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  login(input: LoginInput!): JWTokenResponse!
+  refreshToken(refresh: String!): JWTokenResponse!
+}

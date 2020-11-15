@@ -25,7 +25,7 @@ class ArnUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ArnUser
-        fields = ('email', 'username', 'password')
+        fields = ('email', 'username', 'password', 'created', 'id')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
