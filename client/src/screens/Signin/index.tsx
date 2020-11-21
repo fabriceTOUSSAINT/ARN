@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Button, <Input></Input> } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Button } from 'react-native';
 
 // interface SigninProps {
 //     navigation: any
@@ -9,12 +9,13 @@ const Signin = ({ navigation, ...props }: any) => {
 
     const handleSignin = () => {
         console.log('here')
+        navigation.navigate('Signup')
     }
 
     return (
         <View style={styles.container}>
             <Text style={styles.boldText}>Signin</Text>
-            <Button onPress={() => handleSignin()} title="sign_in_here">Sign in here</Button>
+            <Button onPress={handleSignin} title="sign_in_here">Sign in here</Button>
         </View>
     )
 }
